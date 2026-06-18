@@ -1,4 +1,7 @@
 from fastapi import FastAPI
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 app = FastAPI(
     title="AI-Powered Transaction Processing Pipeline",
