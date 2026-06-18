@@ -45,7 +45,7 @@ def process_job(job_id: str, csv_content: str, db: Session = Depends(get_session
 
         except Exception as e:
             print(f"Job {job_id} failed: {e}")
-            mark_job_failed(db, job_id, e)
+            mark_job_failed(db, job_id, str(e))
 
             return {
                 "job_id": job_id,
