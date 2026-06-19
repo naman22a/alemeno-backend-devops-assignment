@@ -21,7 +21,7 @@ docker compose up
 ```
 
 The first boot takes a few minutes because the `ollama-init` service pulls
-`llama3.2:3b` (~2GB) into the `ollama_data` volume. Subsequent boots are instant.
+`phi4-mini:latest` (2.5GB) into the `ollama_data` volume. Subsequent boots are instant.
 
 Once you see `Application startup complete` in the api logs, the service is ready.
 
