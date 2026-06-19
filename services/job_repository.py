@@ -123,7 +123,7 @@ def get_transactions_for_job(
     statement = (
         select(Transaction)
         .where(Transaction.job_id == uuid.UUID(job_id))
-        .order_by(Transaction.date)
+        .order_by(Transaction.transaction_date)
     )
 
     return list(db.exec(statement).all())

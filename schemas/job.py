@@ -1,5 +1,6 @@
 from __future__ import annotations
 from datetime import date, datetime
+import datetime as dt
 from typing import Optional
 
 from pydantic import BaseModel, ConfigDict
@@ -35,7 +36,7 @@ class JobStatusResponse(BaseModel):
 
 class TransactionOut(BaseModel):
     txn_id: Optional[str] = None
-    date: date | None = None
+    date: dt.date | None = None
     merchant: Optional[str] = None
     amount: Optional[float] = None
     currency: Optional[str] = None
