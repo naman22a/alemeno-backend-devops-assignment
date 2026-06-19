@@ -1,4 +1,4 @@
 from sqlmodel import create_engine
+from config import settings
 
-postgresql_url = 'postgresql://postgres:postgres@localhost:5432/db'
-engine = create_engine(postgresql_url)
+engine = create_engine(settings.database_url)

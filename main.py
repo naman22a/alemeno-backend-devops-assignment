@@ -7,6 +7,7 @@ from routes.jobs import jobs_router
 from typing import Literal
 import redis as redis_lib
 from sqlalchemy import text
+from config import settings
 
 logging.basicConfig(level=logging.INFO)
 
@@ -31,7 +32,7 @@ def _check_postgres() -> tuple[Literal["ok", "error"], str]:
 
 def _check_redis() -> tuple[Literal["ok", "error"], str]:
     try:
-        client = redis_lib.from_url('redis://localhost:6379/0', socket_connect_timeout=2)
+        client = redis_lib.from_url(settings.celery_broker_url, socket_connect_timeout=2)
         client.ping()
         client.close()
         return "ok", ""

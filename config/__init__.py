@@ -8,17 +8,17 @@ class Settings(BaseSettings):
     missing, but docker-compose always passes an env_file explicitly.
     """
 
-    database_url: str = "postgresql+psycopg2://localhost:postgres@postgres:5432/db"
+    database_url: str = "postgresql+psycopg2://postgres:postgres@postgres:5432/db"
 
-    celery_broker_url: str = "redis://localhost:6379/0"
-    celery_result_backend: str = "redis://localhost:6379/1"
+    celery_broker_url: str = "redis://redis:6379"
+    celery_result_backend: str = "redis://redis:6379"
 
-    ollama_base_url: str = "http://localhost:11434"
-    ollama_model: str = "llama3.2:3b"
+    ollama_base_url: str = "http://ollama:11434"
+    ollama_model: str = "phi4-mini:latest"
 
     domestic_only_brands: str = "Swiggy,Ola,IRCTC,Zomato,RedBus,BookMyShow"
 
-    upload_dir: str = "uploads"
+    upload_dir: str = "/app/uploads"
 
     # LLM batching / retry knobs. Kept here (not hardcoded in services) so
     # they can be tuned per environment without a code change.
