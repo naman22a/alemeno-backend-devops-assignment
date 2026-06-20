@@ -4,6 +4,8 @@ A FastAPI backend that accepts a dirty transactions CSV, processes it asynchrono
 through Celery + Redis, uses a local Ollama LLM for classification and narrative
 generation, and exposes a polling API for results.
 
+![Pipeline](./diagrams/pipeline.png)
+
 ---
 
 ## Quick Start
@@ -127,6 +129,7 @@ Celery Worker
 Client
   ▼ GET /jobs/{id}/status  (polls until completed)
   ▼ GET /jobs/{id}/results (fetches the structured report)
+  ▼ GET /jobs
 ```
 
 ### Why each technology was chosen
