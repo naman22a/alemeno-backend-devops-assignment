@@ -140,7 +140,7 @@ Client
 | **Celery + Redis** | Mature, battle-tested, retry primitives built in. Fits this workload better than RQ because Celery's `task_track_started=True` lets the API return a `processing` status without polling Redis directly |
 | **PostgreSQL**     | JSONB for `top_merchants`, transactional integrity for job state transitions                                                                                                                            |
 | **SQLAlchemy**     | Repository pattern: swap Postgres for SQLite in tests trivially                                                                                                                                         |
-| **Ollama (local)** | No API key, no spend. Runs on RTX 5070. Model is swappable via `OLLAMA_MODEL` env var                                                                                                                   |
+| **Ollama (local)** | No API key, no spend. Model is swappable via `OLLAMA_MODEL` env var                                                                                                                                     |
 | **tenacity**       | Exponential backoff in one decorator. Assignment 5(e) in ~5 lines                                                                                                                                       |
 | **pandas**         | Vectorised cleaning/anomaly math. Median-per-account-group is one `groupby`                                                                                                                             |
 
